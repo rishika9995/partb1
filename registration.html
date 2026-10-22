@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>event registration</h1>
+    </header>
+    <nav>
+        <a href="index.html">home</a>
+        <a href="events.html">events</a>
+        <a href="registration.html">register</a>
+        <a href="contact.html">contact</a>
+    </nav>
+    <div class="content">
+        <h2>student registration</h2>
+        <form onsubmit="registerStudent(event)">
+            <label>name:</label>
+            <input type="text" id="name" required>
+            <label>email:</label>
+            <input type="email" required>
+            <label>department</label>
+            <input type="text" required>
+            <label>select event:</label>
+            <select id="event" required>
+                <option value="">select event</option>
+                <option>web development workshop</option>
+                <option>quiz competition</option>
+                <option>coding competition</option>
+            </select>
+            <button type="submit">register</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        function registerStudent(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let eventName = document.getElementById("event").value;
+            document.getElementById("message").innerHTML =
+                "successfully registered!<br>" +
+                "welcome" + name + "<br>" +
+                "Event:" + eventName;
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
